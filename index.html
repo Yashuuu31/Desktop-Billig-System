@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <title>Developed By Yash Chauhan</title>
+  </head>
+  <body>
+    <!-- Body Start -->
+
+    <div class="container-fluid mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">XYZ Restro</h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <th style="width: 30%;">Customer Name</th>
+                <td>
+                  <input type="text" id="CustormerName" class="form-control" placeholder="Enter Customer Name">
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 30%;">Customer Mobile No.</th>
+                <td>
+                  <input type="text" id="CustormerMobile" class="form-control" placeholder="Enter Mobile No">
+                </td>
+              </tr>
+            </table>
+
+            <table class="table table-bordered" id="dynamicTable">
+              <tr>
+                <td>SR.</td>
+                <td>Item Name</td>
+                <td>Item Price</td>
+                <td>Qty</td>
+                <td>Amount</td>
+                <td>Action</td>
+              </tr>
+
+              <tr class="FormRow">
+                <td class="SrNo">1</td>
+                <td>
+                  <div class="form-group">
+                    <input type="text" class="form-control ItemName" placeholder="Item Name">
+                  </div>
+                </td>
+                <td>
+                  <input type="number" class="form-control ItemPrice" placeholder="Price">
+                </td>
+                <td>
+                  <input type="number" class="form-control ItemQty" placeholder="Qty">
+                </td>
+                <td>
+                  <input readonly type="text" class="form-control ItemAmount" placeholder="Amount">
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button class="btn btn-success btn-sm AddBtn" type="button">Add</button>
+                    <button class="btn btn-danger btn-sm MinBtn" type="button">Min</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3"></td>
+                <th>Total</th>
+                <td colspan="2">
+                  <input readonly type="number" id="Total" class="form-control" placeholder="Total">
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3"></td>
+                <th>Discount</th>
+                <td colspan="2">
+                  <input type="number" id="Discount" class="form-control" placeholder="Discount">
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3"></td>
+                <th>Grand Total</th>
+                <td colspan="2">
+                  <input readonly type="number" id="GrandTotal" class="form-control" placeholder="Grand Total">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row justify-content-center">
+            <button type="button" id="ClearData" class="btn btn-danger px-4 m-2">Clear</button>
+            <a href="./views/bill.html" target="_blank" id="MakeBill" class="btn btn-primary px-4 m-2">Make Bill</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Body End -->
+    <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
+    <script src="./assets/jQuery/jquery.js"></script>
+    <script src="./assets/custom/js/custom.js"></script>
+  </body>
+</html>

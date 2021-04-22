@@ -1,0 +1,22 @@
+{
+  "name": "restro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "packager": "electron-packager ./dist --platform=win32"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.4",
+    "electron-builder": "^22.10.5"
+  },
+  "build":{
+    "win":{
+      "icon":"assets/img/Icon.jpg"
+    }
+  }
+}

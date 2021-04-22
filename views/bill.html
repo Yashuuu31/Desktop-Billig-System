@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>         
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Custormer Bill</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="width: 30%;">Custormer Name</th>
+                            <td id="CustormerName"></td>
+                        </tr>
+                        <tr >
+                            <th style="width: 30%;">Custormer Mobile</th>
+                            <td id="CustormerMobile"></td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-bordered" id="dynamicTable">
+                        <tr id="FirstRow">
+                            <th>SR.</th>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Amount</th>
+                        </tr>
+                        
+                    </table>
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="width: 40%;">Total</th>
+                            <td id="Total"></td>
+                        </tr>
+                        <tr>
+                            <th style="width: 40%;">Discount</th>
+                            <td id="Discount"></td>
+                        </tr>
+                        <tr>
+                            <th style="width: 40%;">Grand Total</th>
+                            <td id="GrandTotal"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-center mt-2 text-primary"> * Thank You For Visiting *</h1>
+    </div>
+</body>
+<script src="../assets/jQuery/jquery.js"></script>
+<script>
+    let getBill = JSON.parse(localStorage.getItem('bill'));
+    
+    console.log(getBill);
+    $('#CustormerName').text(getBill.CustormerName);
+    $('#CustormerMobile').text(getBill.CustormerMobile);
+
+    getBill.item.forEach((data,ky) => {
+        let tblRow = `<tr>
+                            <td>${ky + 1}</td>
+                            <td>${data.Name}</td>
+                            <td>${data.Price}</td>
+                            <td>${data.Qty}</td>
+                            <td>${data.Amount}</td>
+                        </tr>`;
+        $('#dynamicTable').append(tblRow);
+        
+    });
+
+
+    $('#Total').text(getBill.total);
+    $('#Discount').text(getBill.discount);
+    $('#GrandTotal').text(getBill.grandTotal);
+</script>
+</html>
